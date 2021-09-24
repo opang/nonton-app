@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <!-- main content starts  -->
+  <div class="main-content">
+
+   
+    <section id="iq-suggested" class="s-margin">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 overflow-hidden">
+            <div class="iq-main-header d-flex align-items-center justify-content-between">
+              <h4 class="main-title">Most Watched</h4>
+              <a href="#" class="iq-view-all">View All</a>
+            </div>
+            <div class="favorite-contens">
+              <ul class="favorites-slider list-inline row p-0 mb-0">
+
+                {% for movie in most_watched %}
+                <!-- slide item 1 -->
+                <li class="slide-item">
+                  <div class="block-images position-relative">
+                    <div class="img-box">
+                      <img src="{{movie.image.url}}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="block-description">
+                      <h6 class="iq-title">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">{{movie.title}}</a>
+                      </h6>
+
+                      <div class="hover-buttons">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">
+                        <span class="btn btn-hover iq-button">
+                          <i class="fa fa-play mr-1"></i>
+                          Play Now
+                        </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="iq-suggested" class="s-margin">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12 overflow-hidden">
+
+              <div class="favorite-contens">
+                <ul class="favorites-slider list-inline row p-0 mb-0">
+  
+                  {% for movie in most_watched2 %}
+                  <!-- slide item 1 -->
+                  <li class="slide-item">
+                    <div class="block-images position-relative">
+                      <div class="img-box">
+                        <img src="{{movie.image.url}}" class="img-fluid" alt="" />
+                      </div>
+                      <div class="block-description">
+                        <h6 class="iq-title">
+                          <a href="{% url 'movies:movie_detail' movie.slug %}">{{movie.title}}</a>
+                        </h6>
+  
+                        <div class="hover-buttons">
+                          <a href="{% url 'movies:movie_detail' movie.slug %}">
+                          <span class="btn btn-hover iq-button">
+                            <i class="fa fa-play mr-1"></i>
+                            Play Now
+                          </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  {% endfor %}
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="iq-suggested" class="s-margin">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 overflow-hidden">
+
+            <div class="favorite-contens">
+              <ul class="favorites-slider list-inline row p-0 mb-0">
+
+                {% for movie in most_watched3 %}
+                <!-- slide item 1 -->
+                <li class="slide-item">
+                  <div class="block-images position-relative">
+                    <div class="img-box">
+                      <img src="{{movie.image.url}}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="block-description">
+                      <h6 class="iq-title">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">{{movie.title}}</a>
+                      </h6>
+
+                      <div class="hover-buttons">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">
+                        <span class="btn btn-hover iq-button">
+                          <i class="fa fa-play mr-1"></i>
+                          Play Now
+                        </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+    
+    <section id="iq-suggested" class="s-margin">       
+        <div class="container-fluid">          
+          <div class="row">           
+            <div class="col-sm-12 overflow-hidden">
+              <div class="iq-main-header d-flex align-items-center justify-content-between">
+                <h4 class="main-title">Top Rated</h4>
+                <a href="#" class="iq-view-all">View All</a>
+              </div>             
+              <div class="favorite-contens">
+                <ul class="favorites-slider list-inline row p-0 mb-0">
+  
+                  {% for movie in top_rated %}
+                  <!-- slide item 1 -->
+                  <li class="slide-item">
+                    <div class="block-images position-relative">
+                      <div class="img-box">
+                        <img src="{{movie.image.url}}" class="img-fluid" alt="" />
+                      </div>
+                      <div class="block-description">
+                        <h6 class="iq-title">
+                          <a href="{% url 'movies:movie_detail' movie.slug %}">{{movie.title}}</a>
+                        </h6>
+  
+                        <div class="hover-buttons">
+                          <a href="{% url 'movies:movie_detail' movie.slug %}">
+                          <span class="btn btn-hover iq-button">
+                            <i class="fa fa-play mr-1"></i>
+                            Play Now
+                          </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  {% endfor %}
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="iq-suggested" class="s-margin">       
+      <div class="container-fluid">          
+        <div class="row">           
+          <div class="col-sm-12 overflow-hidden">             
+            <div class="favorite-contens">
+              <ul class="favorites-slider list-inline row p-0 mb-0">
+
+                {% for movie in top_rated2 %}
+                <!-- slide item 1 -->
+                <li class="slide-item">
+                  <div class="block-images position-relative">
+                    <div class="img-box">
+                      <img src="{{movie.image.url}}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="block-description">
+                      <h6 class="iq-title">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">{{movie.title}}</a>
+                      </h6>
+
+                      <div class="hover-buttons">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">
+                        <span class="btn btn-hover iq-button">
+                          <i class="fa fa-play mr-1"></i>
+                          Play Now
+                        </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+    
+
+    
+
+  </div>
+
+  <!-- main content ends  -->
+  {% endblock body %}

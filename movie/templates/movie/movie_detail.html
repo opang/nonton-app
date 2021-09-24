@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <!-- main content starts  -->
+  <div class="main-content">
+
+    <!-- trending section  -->
+    <section id="iq-trending" class="s-margin">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 overflow-hidden">
+            <div class="trending-contens">
+              <ul id="trending-slider" class="list-inline p-0 m-0 d-flex align-items-center">
+                <li>
+                  <div class="tranding-block position-relative" style="background-image: url({{object.image.url}});">
+                    <div class="trending-custom-tab">
+                      <div class="tab-title-info position-relative">
+                        <ul class="trending-pills d-flex nav nav-pills justify-content-center align-items-center text-center" role="tablist">
+                          <li class="nav-item">
+                            <a href="#trending-data1" class="nav-link active show" data-toggle="pill" role="tab" aria-selected="true">
+                              Overview
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="trending-content">
+                        <div id="trending-data1" class="overview-tab tab-pane fade active show">
+                          <div class="trending-info align-items-center w-100 animated fadeInUp">
+                            <h1 class="trending-text big-title text-uppercase">{{ object }}</h1>
+                            <div class="d-flex align-items-center text-white text-detail">
+                              <span class="trending-year">{{object.year}}</span>
+                            </div>
+                            <p class="trending-dec" style="padding-top: 20px;">
+                              {{object.description}}
+                            </p>
+                    
+                            <div class="p-btns">
+                              <div class="d-flex align-items-center p-0"> 
+                                {% for link in links %}                              
+                                  {% if link.type == 'D' %}
+                                  <a href="{{link.link}}" class="btn btn-hover mr-2" tabindex="0">
+                                    <i class="fa fa-play mr-2"></i>
+                                    Download
+                                  </a>
+                                  {% endif %}    
+                                  {% endfor %}                           
+                              </div>
+                              
+                            </div>
+                            <div class="trending-list mt-4">
+                              <div class="text-primary title">
+                                Starring : 
+                                <span class="text-body">
+                                  {{object.cast}}
+                                </span>
+                              </div>
+                              <div class="text-primary title">
+                                Genres :
+                                <span class="text-body">
+                                  {{object.category}}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--rekomend-->
+    <section id="iq-suggested" class="s-margin">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 overflow-hidden">
+            <div class="iq-main-header d-flex align-items-center justify-content-between">
+              <h4 class="main-title">Related Movies</h4>
+              <a href="#" class="iq-view-all">View All</a>
+            </div>
+            <div class="favorite-contens">
+              <ul class="favorites-slider list-inline row p-0 mb-0">
+
+                {% for movie in related_movies %}
+                <!-- slide item 1 -->
+                <li class="slide-item">
+                  <div class="block-images position-relative">
+                    <div class="img-box">
+                      <img src="{{movie.image.url}}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="block-description">
+                      <h6 class="iq-title">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">{{movie.title}}</a>
+                      </h6>
+
+                      <div class="hover-buttons">
+                        <a href="{% url 'movies:movie_detail' movie.slug %}">
+                        <span class="btn btn-hover iq-button">
+                          <i class="fa fa-play mr-1"></i>
+                          Play Now
+                        </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- main content ends  -->
+  {% endblock body %}
